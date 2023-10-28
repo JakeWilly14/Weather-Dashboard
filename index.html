@@ -10,6 +10,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   </head>
   
   <body>
@@ -40,9 +41,9 @@
         Current City Weather
       </h3>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
+        <li class="list-group-item" id="current-temp">An item</li>
+        <li class="list-group-item" id="current-wind">A second item</li>
+        <li class="list-group-item" id="current-humidity">A third item</li>
       </ul>
     </div>
     <!-- Card to display 5 day forecast -->
