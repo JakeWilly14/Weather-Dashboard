@@ -36,27 +36,27 @@
   
     </div>
     <!-- Card to display searched city's current weather -->
-    <div class="card" style="width: 18rem;">
-      <h3 class="card-header">
+    <div class="card display" id="query-display"style="width: 18rem;">
+      <h3 class="card-header" id="current-query">
         Current City Weather
       </h3>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="current-temp">An item</li>
-        <li class="list-group-item" id="current-wind">A second item</li>
-        <li class="list-group-item" id="current-humidity">A third item</li>
+        <li class="list-group-item" id="current-temp"></li>
+        <li class="list-group-item" id="current-wind"></li>
+        <li class="list-group-item" id="current-humidity"></li>
       </ul>
     </div>
     <!-- Card to display 5 day forecast -->
-    <div>
+    <div class="display" id="forecast-display">
       <h2>5 Day Forecast:</h2>
       <div class="card" style="width: 18rem;">
         <div class="card-header">
           Date
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
+          <li class="list-group-item" id="forecast-temp"></li>
+          <li class="list-group-item" id="forecast-wind"></li>
+          <li class="list-group-item" id="forecast-humidity"></li>
         </ul>
       </div>
     </div>

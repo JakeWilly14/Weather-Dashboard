@@ -31,7 +31,7 @@ function searchApi(query) {
         (queryName = data.city.name),
         (queryTemp = data.list[0].main.temp + "°F"),
         (queryWind = data.list[0].wind.speed + " MPH"),
-        (queryHumidity = data.list[0].main.humidity + "%"),
+        (queryHumidity = data.list[0].main.humidity + "% Humidity"),
       ];
 
       // 5 day forecast gets data at 12pm
@@ -81,6 +81,18 @@ function searchApi(query) {
       document.getElementById("current-temp").innerHTML = queryTemp;
       document.getElementById("current-wind").innerHTML = queryWind;
       document.getElementById("current-humidity").innerHTML = queryHumidity;
+      document.getElementById('current-query').innerHTML = query;
+      // removes display none class to current and forecast cards
+      var currentDisplay = document.getElementById('query-display')
+      currentDisplay.classList.remove('display')
+
+      var forecastDisplay = document.getElementById('forecast-display')
+      forecastDisplay.classList.remove('display')
+      // for loop to create 5 day forecast cards
+      for (var i = 0; i < tempArr.length; i++) {
+        var tempForecastCard = document.createElement('div');
+        var tempForecastList = document.createElement('ul');
+
     });
 }
 
