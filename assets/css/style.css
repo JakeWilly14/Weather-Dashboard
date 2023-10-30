@@ -1,3 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Tilt Neon;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(13, 13, 112);
+}
+
+.page-header {
+  margin: 0 0 0px;
+  color: white;
+}
+
+.query-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 40px;
+}
+
+.query-box {
+  width: 20rem;
+  margin: 50px 0px 15px 50px;
+  text-align: center;
+  flex-grow: 0;
+}
+
+.query-display-box {
+  margin: 50px 25px 0px 50px;
+  text-align: center;
+  flex-grow: 4;
+}
+
+.forecast-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.past-list {
+  width: 20rem;
+  margin: 50px 15px 15px 50px;
+  text-align: center;
+}
+
+.forecast-card-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.forecast-card {
+  width: 10rem;
+  margin: 10px;
+}
+
 .display {
   display: none;
 }
