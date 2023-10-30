@@ -115,7 +115,6 @@ function searchApi(query) {
         "text-light",
         "m-1",
         "rounded",
-        "col-md-12",
         "recent-btn"
       );
       resultHistory.innerHTML = data.city.name;
