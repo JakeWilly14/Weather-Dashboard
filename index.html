@@ -15,28 +15,30 @@
   
   <body>
 
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar">
       <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
       </div>
     </nav> 
     <!-- Card for city search input -->
-    <div class="card" style= "width: 18rem;">
-      <div class="card-body">
-        <h3 class="card-title">Search for a city</h3>
-        <div class="form-floating">
-          <textarea class="form-control" placeholder="City Name" id="floatingTextarea"></textarea>
-          <label for="floatingTextarea"></label>
+    <div class="container row">
+      <div class="card col-md-3" style= "width: 18rem;">
+        <div class="card-body">
+          <h3 class="card-title">Search for a city</h3>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="City Name" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea"></label>
+          </div>
+          <a class="btn btn-primary" id="submit-btn">Submit</a>
         </div>
-        <a class="btn btn-primary" id="submit-btn">Submit</a>
       </div>
     </div>
     <!-- Card to display history of searched cities -->
-    <div class="list-group" id="recent-list" style="width: 18rem;">
+    <div class="list-group row" id="recent-list" style="width: 18rem;">
   
     </div>
     <!-- Card to display searched city's current weather -->
-    <div class="card display" id="query-display"style="width: 18rem;">
+    <div class="card display" id="query-display" style="width: 18rem;">
       <h3 class="card-header" id="current-query">
         Current City Weather
       </h3>
@@ -49,14 +51,58 @@
     <!-- Card to display 5 day forecast -->
     <div class="display" id="forecast-display">
       <h2>5 Day Forecast:</h2>
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
+      <div class="card" id="forecast one" style="width: 18rem;">
+        <div class="card-header" id="day-one">
           Date
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" id="forecast-temp"></li>
-          <li class="list-group-item" id="forecast-wind"></li>
-          <li class="list-group-item" id="forecast-humidity"></li>
+          <li class="list-group-item" id="forecast-temp1"></li>
+          <li class="list-group-item" id="forecast-wind1"></li>
+          <li class="list-group-item" id="forecast-humidity1"></li>
+        </ul>
+      </div>
+
+      <div class="card" id="forecast-two" style="width: 18rem;">
+        <div class="card-header" id="day-two">
+          Date
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="forecast-temp2"></li>
+          <li class="list-group-item" id="forecast-wind2"></li>
+          <li class="list-group-item" id="forecast-humidity2"></li>
+        </ul>
+      </div>
+
+      <div class="card" id="forecast-three" style="width: 18rem;">
+        <div class="card-header" id="day-three">
+          Date
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="forecast-temp3"></li>
+          <li class="list-group-item" id="forecast-wind3"></li>
+          <li class="list-group-item" id="forecast-humidity3"></li>
+        </ul>
+      </div>
+
+      <div class="card" id="forecast-four" style="width: 18rem;">
+        <div class="card-header" id="day-four">
+          Date
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="forecast-temp4"></li>
+          <li class="list-group-item" id="forecast-wind4"></li>
+          <li class="list-group-item" id="forecast-humidity4"></li>
+        </ul>
+      </div>
+
+      <div class="card" id="forecast-five" style="width: 18rem;">
+        <div class="card-header" id="day-five">
+          Date
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="forecast-temp5"></li>
+          <li class="list-group-item" id="forecast-wind5"></li>
+          <li class="list-group-item" id="forecast-humidity5"></li>
         </ul>
       </div>
     </div>
