@@ -1,6 +1,5 @@
 var submitBtn = document.getElementById("submit-btn");
 var cityHistory = document.getElementById("recent-list");
-var recentQueryBtn = document.getElementsByClassName('recent-btn');
 
 // function that takes users input from search city text area
 // then sends the query value to the searchApi function
@@ -28,82 +27,80 @@ function searchApi(query) {
     })
     .then(function (data) {
       // Current data on search query
+
       var forecastDates = [
-        dayOne = data.list[4].dt_txt,
-        dayTwo = data.list[12].dt_txt,
-        dayThree = data.list[20].dt_txt,
-        dayFour = data.list[28].dt_txt,
-        dayFive = data.list[36].dt_txt,
-      ]
+        (dayOne = dayjs(data.list[4].dt_txt).format("MM/DD/YYYY")),
+        (dayTwo = dayjs(data.list[12].dt_txt).format("MM/DD/YYYY")),
+        (dayThree = dayjs(data.list[20].dt_txt).format("MM/DD/YYYY")),
+        (dayFour = dayjs(data.list[28].dt_txt).format("MM/DD/YYYY")),
+        (dayFive = dayjs(data.list[36].dt_txt).format("MM/DD/YYYY")),
+      ];
 
       var datesInput = [
-        document.getElementById('day-one'),
-        document.getElementById('day-two'),
-        document.getElementById('day-three'),
-        document.getElementById('day-four'),
-        document.getElementById('day-five'),
-      ]
+        document.getElementById("day-one"),
+        document.getElementById("day-two"),
+        document.getElementById("day-three"),
+        document.getElementById("day-four"),
+        document.getElementById("day-five"),
+      ];
 
       var queryData = [
         (queryName = data.city.name),
-        (queryTemp = data.list[0].main.temp + "°F"),
-        (queryWind = data.list[0].wind.speed + " MPH"),
-        (queryHumidity = data.list[0].main.humidity + "% Humidity"),
+        (queryTemp = "Temp: " + data.list[0].main.temp + "°F"),
+        (queryWind = "Wind: " + data.list[0].wind.speed + " MPH"),
+        (queryHumidity = "Humidity: " + data.list[0].main.humidity + "%"),
       ];
 
       // 5 day forecast gets data at 12pm
       var tempArr = [
-        (dayOne = data.list[4].main.temp + "°F"),
-        (dayTwo = data.list[12].main.temp + "°F"),
-        (dayThree = data.list[20].main.temp + "°F"),
-        (dayFour = data.list[28].main.temp + "°F"),
-        (dayFive = data.list[36].main.temp + "°F"),
+        (dayOne = "Temp: " + data.list[4].main.temp + "°F"),
+        (dayTwo = "Temp: " + data.list[12].main.temp + "°F"),
+        (dayThree = "Temp: " + data.list[20].main.temp + "°F"),
+        (dayFour = "Temp: " + data.list[28].main.temp + "°F"),
+        (dayFive = "Temp: " + data.list[36].main.temp + "°F"),
       ];
 
       var tempInput = [
-        dayOne = document.getElementById('forecast-temp1'),
-        document.getElementById('forecast-temp2'),
-        document.getElementById('forecast-temp3'),
-        document.getElementById('forecast-temp4'),
-        document.getElementById('forecast-temp5'),
-      ]
+        (dayOne = document.getElementById("forecast-temp1")),
+        document.getElementById("forecast-temp2"),
+        document.getElementById("forecast-temp3"),
+        document.getElementById("forecast-temp4"),
+        document.getElementById("forecast-temp5"),
+      ];
 
       var windArr = [
-        (dayOne = data.list[4].wind.speed + " MPH"),
-        (dayTwo = data.list[12].wind.speed + " MPH"),
-        (dayThree = data.list[20].wind.speed + " MPH"),
-        (dayFour = data.list[28].wind.speed + " MPH"),
-        (dayFive = data.list[36].wind.speed + " MPH"),
+        (dayOne = "Wind: " + data.list[4].wind.speed + " MPH"),
+        (dayTwo = "Wind: " + data.list[12].wind.speed + " MPH"),
+        (dayThree = "Wind: " + data.list[20].wind.speed + " MPH"),
+        (dayFour = "Wind: " + data.list[28].wind.speed + " MPH"),
+        (dayFive = "Wind: " + data.list[36].wind.speed + " MPH"),
       ];
 
       var windInput = [
-        document.getElementById('forecast-wind1'),
-        document.getElementById('forecast-wind2'),
-        document.getElementById('forecast-wind3'),
-        document.getElementById('forecast-wind4'),
-        document.getElementById('forecast-wind5'),
-      ]
+        document.getElementById("forecast-wind1"),
+        document.getElementById("forecast-wind2"),
+        document.getElementById("forecast-wind3"),
+        document.getElementById("forecast-wind4"),
+        document.getElementById("forecast-wind5"),
+      ];
 
       var humidityArr = [
-        (dayOne = data.list[4].main.humidity + "% Humidity"),
-        (dayTwo = data.list[12].main.humidity + "% Humidity"),
-        (dayThree = data.list[20].main.humidity + "% Humidity"),
-        (dayFour = data.list[28].main.humidity + "% Humidity"),
-        (dayFive = data.list[36].main.humidity + "% Humidity"),
+        (dayOne = "Humidity " + data.list[4].main.humidity + "%"),
+        (dayTwo = "Humidity " + data.list[12].main.humidity + "%"),
+        (dayThree = "Humidity " + data.list[20].main.humidity + "%"),
+        (dayFour = "Humidity " + data.list[28].main.humidity + "%"),
+        (dayFive = "Humidity " + data.list[36].main.humidity + "%"),
       ];
 
       var humidityInput = [
-        document.getElementById('forecast-humidity1'),
-        document.getElementById('forecast-humidity2'),
-        document.getElementById('forecast-humidity3'),
-        document.getElementById('forecast-humidity4'),
-        document.getElementById('forecast-humidity5'),
-      ]
-      console.log(data.list[0]);
-      console.log(queryName);
-      console.log(queryData);
-      console.log(tempArr, windArr, humidityArr);
-      // sets city query and data to local storagegit 
+        document.getElementById("forecast-humidity1"),
+        document.getElementById("forecast-humidity2"),
+        document.getElementById("forecast-humidity3"),
+        document.getElementById("forecast-humidity4"),
+        document.getElementById("forecast-humidity5"),
+      ];
+
+      // sets city query and data to local storage
       localStorage.setItem("cityName", queryName);
       localStorage.setItem("cityData", queryData);
       // creating button elements for recently searched cities
@@ -123,13 +120,13 @@ function searchApi(query) {
       document.getElementById("current-temp").innerHTML = queryTemp;
       document.getElementById("current-wind").innerHTML = queryWind;
       document.getElementById("current-humidity").innerHTML = queryHumidity;
-      document.getElementById('current-query').innerHTML = query;
+      document.getElementById("current-query").innerHTML = query;
       // removes display none class to current and forecast cards
-      var currentDisplay = document.getElementById('query-display')
-      currentDisplay.classList.remove('display')
+      var currentDisplay = document.getElementById("query-display");
+      currentDisplay.classList.remove("display");
       // removes display none styling from query data after function is called
-      var forecastDisplay = document.getElementById('forecast-display')
-      forecastDisplay.classList.remove('display')
+      var forecastDisplay = document.getElementById("forecast-display");
+      forecastDisplay.classList.remove("display");
       // display 5 day forecast in html
       datesInput[0].innerText = forecastDates[0];
       datesInput[1].innerText = forecastDates[1];
@@ -155,7 +152,16 @@ function searchApi(query) {
       humidityInput[3].innerText = humidityArr[3];
       humidityInput[4].innerText = humidityArr[4];
     });
-  }
+}
 
+function searchHistory() {
+  var recentSearchValue = document.getElementById("recent-city").value;
+  var apiQueryUrl =
+    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    recentSearchValue +
+    "&units=imperial&limit=1&appid=35d2279adb1f47e2cecb828267198a11";
 
- submitBtn.addEventListener("click", getParams);
+  searchApi(apiQueryUrl);
+}
+
+submitBtn.addEventListener("click", getParams);
