@@ -30,6 +30,11 @@
   flex-grow: 0;
 }
 
+textarea {
+  resize: none;
+  text-align: center;
+}
+
 .query-display-box {
   margin: 50px 25px 0px 50px;
   text-align: center;

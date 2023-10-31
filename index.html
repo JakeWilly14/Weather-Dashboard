@@ -1,50 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Weather Forecast Display</title>
-    <link 
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-      rel="stylesheet" 
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
-      crossorigin="anonymous">
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Tilt+Neon&display=swap" 
-      rel="stylesheet">
-    <link 
-      rel="stylesheet" 
-      href="assets/css/style.css">
-    <script 
-      src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js">
-    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   </head>
-  
-  <body>
 
+  <body>
     <nav class="navbar">
       <div class="nav-box">
         <span class="page-header h1">Weather Dashboard</span>
       </div>
     </nav>
 
-    <section class="query-container"> 
+    <section class="query-container">
       <!-- Card for city search input -->
       <div class="query-box">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem">
           <h3 class="card-title">Search for a city</h3>
           <div class="form-floating">
-            <textarea class="form-control" placeholder="City Name" id="floatingTextarea"></textarea>
+            <textarea
+              class="form-control"
+              placeholder="City Name"
+              id="floatingTextarea"
+            ></textarea>
             <label for="floatingTextarea"></label>
           </div>
           <a class="btn btn-primary" id="submit-btn">Submit</a>
         </div>
       </div>
       <!-- Card to display searched city's current weather -->
-      <div class="query-display-box card display" id="query-display" style="width: 18rem;">
-        <h3 class="card-header" id="current-query">
-          Current City Weather
-        </h3>
+      <div
+        class="query-display-box card display"
+        id="query-display"
+        style="width: 18rem"
+      >
+        <h3 class="card-header" id="current-query">Current City Weather</h3>
         <ul class="list-group list-group-flush">
           <li class="list-group-item" id="current-temp"></li>
           <li class="list-group-item" id="current-wind"></li>
@@ -52,19 +55,17 @@
         </ul>
       </div>
     </section>
-  
+
     <section class="forecast-container">
       <!-- Card to display history of searched cities -->
-      <div class="past-list list-group row" id="recent-list">
-      
-      </div>
+      <div class="past-list list-group row" id="recent-list"></div>
       <!-- Card to display 5 day forecast -->
       <div class="forecast-box display" id="forecast-display">
         <h2>5 Day Forecast:</h2>
         <div class="forecast-card-box">
-          <div class="forecast-card card" id="forecast one" >
+          <div class="forecast-card card" id="forecast one">
             <div class="card-header" id="day-one">
-              Date
+              Date <img id="day1-icon" src="" alt="weather icon" />
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" id="forecast-temp1"></li>
@@ -72,44 +73,36 @@
               <li class="list-group-item" id="forecast-humidity1"></li>
             </ul>
           </div>
-  
+
           <div class="forecast-card card" id="forecast-two">
-            <div class="card-header" id="day-two">
-              Date
-            </div>
+            <div class="card-header" id="day-two">Date</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" id="forecast-temp2"></li>
               <li class="list-group-item" id="forecast-wind2"></li>
               <li class="list-group-item" id="forecast-humidity2"></li>
             </ul>
           </div>
-  
+
           <div class="forecast-card card" id="forecast-three">
-            <div class="card-header" id="day-three">
-              Date
-            </div>
+            <div class="card-header" id="day-three">Date</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" id="forecast-temp3"></li>
               <li class="list-group-item" id="forecast-wind3"></li>
               <li class="list-group-item" id="forecast-humidity3"></li>
             </ul>
           </div>
-  
+
           <div class="forecast-card card" id="forecast-four">
-            <div class="card-header" id="day-four">
-              Date
-            </div>
+            <div class="card-header" id="day-four">Date</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" id="forecast-temp4"></li>
               <li class="list-group-item" id="forecast-wind4"></li>
               <li class="list-group-item" id="forecast-humidity4"></li>
             </ul>
           </div>
-  
+
           <div class="forecast-card card" id="forecast-five">
-            <div class="card-header" id="day-five">
-              Date
-            </div>
+            <div class="card-header" id="day-five">Date</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" id="forecast-temp5"></li>
               <li class="list-group-item" id="forecast-wind5"></li>
@@ -117,10 +110,11 @@
             </ul>
           </div>
         </div>
-        </div>
-    
+      </div>
     </section>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="assets/js/script.js"></script>
-    
   </body>
+</html>
