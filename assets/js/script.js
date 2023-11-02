@@ -12,11 +12,11 @@ function getParams() {
 // then creates button for past searches
 function searchApi(query) {
   var apiQueryUrl =
-    "http://api.openweathermap.org/data/2.5/forecast?q=&units=imperial&limit=1&appid=35d2279adb1f47e2cecb828267198a11";
+    "https://api.openweathermap.org/data/2.5/forecast?q=&units=imperial&limit=1&appid=35d2279adb1f47e2cecb828267198a11";
 
   if (query) {
     apiQueryUrl =
-      "http://api.openweathermap.org/data/2.5/forecast?q=" +
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
       query +
       "&units=imperial&limit=1&appid=35d2279adb1f47e2cecb828267198a11";
   }
@@ -157,7 +157,7 @@ function searchApi(query) {
 function searchHistory() {
   var recentSearchValue = document.getElementById("recent-city").value;
   var apiQueryUrl =
-    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     recentSearchValue +
     "&units=imperial&limit=1&appid=35d2279adb1f47e2cecb828267198a11";
 
